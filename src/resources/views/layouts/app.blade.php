@@ -12,6 +12,9 @@
 <body>
     @include('commons.header')
     <div class="container">
+        <div class="login-user-name">
+            <p>ユーザー：テスト太郎</p>
+        </div>
         @yield('content')
     </div>
     @include('commons.footer')

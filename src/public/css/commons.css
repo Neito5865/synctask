@@ -68,6 +68,14 @@ header{
     background-color: #F2F2F2;
 }
 
+.login-user-name{
+    text-align: right;
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
 .footer{
     background-color: #DFF4F6;
 }
