@@ -30,13 +30,37 @@ li{
 }
 .project-list__item{
     font-weight: bold;
-    padding: 17px 0 17px 40px;
+    padding: 17px 15px 17px 40px;
     border-bottom: 1px solid #ACACAC;
+    transition: background-color 0.3s ease;
+}
+.project-list__item:first-child{
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
 }
 .project-list__item:last-child{
     border-bottom: none;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
 }
-.project-list__item a{
+.project-list__item--f-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.project-list__item--link a{
     text-decoration: none;
     color: #000;
+}
+.project-list__item--status p{
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+    background-color: #80C970;
+    padding: 7px 12px;
+    border-radius: 4px;
+}
+.project-list__item:hover{
+    background-color: #DFF4F6;
 }
