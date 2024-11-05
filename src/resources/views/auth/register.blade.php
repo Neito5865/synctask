@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    <title>SyncTanc | 新規ユーザー登録</title>
+    <title>SyncTask | 新規ユーザー登録</title>
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/auth/register.css') }}">

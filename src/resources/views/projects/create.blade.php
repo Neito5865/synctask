@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    <title>SyncTanc | プロジェクト作成</title>
+    <title>SyncTask | プロジェクト作成</title>
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/projects/create.css') }}">
