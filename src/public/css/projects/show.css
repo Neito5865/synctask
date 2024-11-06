@@ -60,11 +60,14 @@
 .tasks-table__row:hover{
     background-color: #DFF4F6;
 }
-.tasks-table__row:first-child{
+thead .tasks-table__row{
     height: 40px;
     cursor: auto;
 }
-.tasks-table__row:last-child{
+thead .tasks-table__row:hover {
+    background-color: inherit;
+}
+tbody:last-child .tasks-table__row{
     border-bottom: none;
 }
 .tasks-table__heading{

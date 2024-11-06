@@ -47,6 +47,7 @@ li{
     padding: 17px 15px 17px 40px;
     border-bottom: 1px solid #ACACAC;
     transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 .project-list__item:first-child{
     border-top-left-radius: 6px;
@@ -61,10 +62,6 @@ li{
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.project-list__item--link a{
-    text-decoration: none;
-    color: #000;
 }
 .project-list__item--status p{
     display: inline-block;
