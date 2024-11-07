@@ -36,6 +36,7 @@
     height: 40px;
     border: 1px solid #B1D6F1;
     border-radius: 6px;
+    padding-left: 10px;
 }
 .register-form__btn{
     text-align: center;

@@ -12,9 +12,11 @@
 <body>
     @include('commons.header')
     <div class="container">
-        <div class="login-user-name">
-            <p>ユーザー：テスト太郎</p>
-        </div>
+        @if (Auth::check())
+            <div class="login-user-name">
+                <p>ユーザー：{{ Auth::user()->name }}</p>
+            </div>
+        @endif
         @yield('content')
     </div>
     @include('commons.footer')

@@ -11,7 +11,8 @@
             <h2>ログイン</h2>
         </div>
         <div class="login__form">
-            <form method="" action="" class="login-form__container">
+            <form method="POST" action="{{ route('login') }}" class="login-form__container">
+                @csrf
                 <div class="login-form__group">
                     <div class="login-form__heading">
                         <label class="login-form__label" for="email">メールアドレス</label>

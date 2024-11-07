@@ -11,7 +11,8 @@
             <h2>新規ユーザー登録</h2>
         </div>
         <div class="register__form">
-            <form method="" action="" class="register-form__container">
+            <form method="POST" action="{{ route('register') }}" class="register-form__container">
+                @csrf
                 <div class="register-form__group">
                     <div class="register-form__heading">
                         <label class="register-form__label" for="name">名前</label>

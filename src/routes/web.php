@@ -14,6 +14,9 @@ use App\Http\Controllers\ProjectsController;
 |
 */
 
-// トップページ
-Route::get('/', [ProjectsController::class, 'index'])->name('project.index');
-Route::get('/top', [ProjectsController::class, 'back'])->name('index');
+
+// ログイン後
+Route::group(['middleware' => 'auth'], function(){
+    // トップページ
+    Route::get('/', [ProjectsController::class, 'index'])->name('project.index');
+});
