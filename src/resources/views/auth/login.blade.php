@@ -43,6 +43,9 @@
                     <input class="login-form__input-submit" type="submit" value="ログイン">
                 </div>
             </form>
+            <div class="login__link--register">
+                <a href="{{ route('register') }}">新規ユーザー登録はこちら</a>
+            </div>
         </div>
     </div>
 @endsection

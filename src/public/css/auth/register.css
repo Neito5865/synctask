@@ -23,7 +23,7 @@
     max-width: 400px;
     margin: 0 auto;
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 .register-form__group{
     margin-bottom: 20px;
@@ -38,6 +38,10 @@
     border-radius: 6px;
     padding-left: 10px;
 }
+.register-form__error{
+    font-size: 14px;
+    color: #ff0000;
+}
 .register-form__btn{
     text-align: center;
     width: 100%;
@@ -51,4 +55,12 @@
     background-color: #5799C8;
     height: 40px;
     border-radius: 6px;
+}
+.register__link--login{
+    text-align: center;
+    padding-bottom: 40px;
+}
+.register__link--login a{
+    font-size: 14px;
+    color: #5799C8;
 }
