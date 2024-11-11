@@ -4,66 +4,21 @@
     </div>
     <div class="project-list">
         <ul class="project-list__container">
-            <li class="project-list__item" onclick="location.href='{{ route('project.index') }}'">
-                <div class="project-list__item--f-inner">
-                    <div class="project-list__item--projectName">
-                        <p>テストプロジェクト</p>
+            @foreach ($projects as $project)
+                <li class="project-list__item" onclick="location.href='{{ route('project.index') }}'">
+                    <div class="project-list__item--f-inner">
+                        <div class="project-list__item--projectName">
+                            <p>{{ $project->projectName }}</p>
+                        </div>
+                        <div class="project-list__item--status">
+                            <p>参加中</p>
+                        </div>
                     </div>
-                    <div class="project-list__item--status">
-                        <p>参加中</p>
-                    </div>
-                </div>
-            </li>
-            <li class="project-list__item" onclick="location.href='{{ route('project.index') }}'">
-                <div class="project-list__item--f-inner">
-                    <div class="project-list__item--projectName">
-                        <p>テストプロジェクト</p>
-                    </div>
-                    <div class="project-list__item--status">
-                        <p>参加中</p>
-                    </div>
-                </div>
-            </li>
-            <li class="project-list__item" onclick="location.href='{{ route('project.index') }}'">
-                <div class="project-list__item--f-inner">
-                    <div class="project-list__item--projectName">
-                        <p>テストプロジェクト</p>
-                    </div>
-                    <div class="project-list__item--status">
-                        <p>参加中</p>
-                    </div>
-                </div>
-            </li>
-            <li class="project-list__item" onclick="location.href='{{ route('project.index') }}'">
-                <div class="project-list__item--f-inner">
-                    <div class="project-list__item--projectName">
-                        <p>テストプロジェクト</p>
-                    </div>
-                    <div class="project-list__item--status">
-                        <p>参加中</p>
-                    </div>
-                </div>
-            </li>
-            <li class="project-list__item" onclick="location.href='{{ route('project.index') }}'">
-                <div class="project-list__item--f-inner">
-                    <div class="project-list__item--projectName">
-                        <p>テストプロジェクト</p>
-                    </div>
-                    <div class="project-list__item--status">
-                        <p>参加中</p>
-                    </div>
-                </div>
-            </li>
-            <li class="project-list__item" onclick="location.href='{{ route('project.index') }}'">
-                <div class="project-list__item--f-inner">
-                    <div class="project-list__item--projectName">
-                        <p>テストプロジェクト</p>
-                    </div>
-                    <div class="project-list__item--status">
-                        <p>参加中</p>
-                    </div>
-                </div>
-            </li>
+                </li>
+            @endforeach
         </ul>
+    </div>
+    <div class="project__paginate">
+        {{ $projects->links() }}
     </div>
 </div>
