@@ -10,8 +10,10 @@
         <div class="project-create__heading">
             <h2>プロジェクト新規作成</h2>
         </div>
+        @include('commons.success_messages')
         <div class="project-create__form">
-            <form method="" action="" class="project-create-form__container">
+            <form method="POST" action="{{ route('project.store') }}" class="project-create-form__container">
+                @csrf
                 <div class="project-create-form__group">
                     <div class="project-create-form__heading">
                         <label class="project-create-form__label" for="projectName">プロジェクト名</label>
@@ -27,13 +29,13 @@
                 </div>
                 <div class="project-create-form__group">
                     <div class="project-create-form__heading">
-                        <label class="project-create-form__label" for="detail">概要</label>
+                        <label class="project-create-form__label" for="description">概要</label>
                     </div>
                     <div class="project-create-form__item">
-                        <textarea class="project-create-form__textarea" name="detail" id="detail">{{ old('detail') }}</textarea>
+                        <textarea class="project-create-form__textarea" name="description" id="description">{{ old('description') }}</textarea>
                     </div>
                     <div class="project-create-form__error">
-                        @error('detail')
+                        @error('description')
                             {{ $message }}
                         @enderror
                     </div>
@@ -44,7 +46,7 @@
             </form>
         </div>
         <div class="project-create__btn--back">
-            <a href="">&lt; 戻る</a>
+            <a href="{{ route('project.index') }}">&lt; 戻る</a>
         </div>
     </div>
 @endsection

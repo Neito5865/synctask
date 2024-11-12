@@ -19,4 +19,8 @@ use App\Http\Controllers\ProjectsController;
 Route::group(['middleware' => 'auth'], function(){
     // トップページ
     Route::get('/', [ProjectsController::class, 'index'])->name('project.index');
+    // プロジェクト新規作成ページ
+    Route::get('/create', [ProjectsController::class, 'create'])->name('project.create');
+    // プロジェクト新規作成処理
+    Route::post('/create', [ProjectsController::class, 'store'])->name('project.store');
 });

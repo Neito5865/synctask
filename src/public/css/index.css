@@ -103,6 +103,7 @@ li{
     font-size: 20px;
     line-height: 30px;
     background-color: #fff;
+    font-size: 14px;
 }
 .pagination__arrow:first-child{
     border-top-left-radius: 4px;
