@@ -34,4 +34,11 @@ class ProjectsController extends Controller
 
         return back()->with('success', '新規プロジェクトを作成しました');
     }
+
+    // プロジェクト詳細ページ
+    public function show($id)
+    {
+        $project = Project::findOrFail($id);
+        return view('projects.show', compact('project'));
+    }
 }

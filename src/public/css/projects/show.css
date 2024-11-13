@@ -25,11 +25,11 @@
     border-radius: 4px;
     padding: 7px 12px;
 }
-.tasks__button--create{
+.project-show__btn--create-task{
     font-size: 14px;
     margin-bottom: 10px;
 }
-.tasks__button--create a {
+.project-show__btn--create-task a {
     text-decoration: none;
     font-size: 14px;
     color: #fff;

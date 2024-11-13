@@ -61,6 +61,7 @@
     border: 1px solid #B1D6F1;
     border-radius: 6px;
     padding: 10px;
+    line-height: 1.5;
 }
 .project-create-form__btn {
     text-align: center;

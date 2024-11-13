@@ -23,4 +23,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/create', [ProjectsController::class, 'create'])->name('project.create');
     // プロジェクト新規作成処理
     Route::post('/create', [ProjectsController::class, 'store'])->name('project.store');
+
+    // プロジェクト詳細ページ
+    Route::get('/project/{id}', [ProjectsController::class, 'show'])->name('project.show');
 });

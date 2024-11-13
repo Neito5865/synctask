@@ -2,7 +2,7 @@
     <div class="project-list">
         <ul class="project-list__container">
             @foreach ($projects as $project)
-                <li class="project-list__item" onclick="location.href='{{ route('project.index') }}'">
+                <li class="project-list__item" onclick="location.href='{{ route('project.show', $project->id) }}'">
                     <div class="project-list__item--f-inner">
                         <div class="project-list__item--projectName">
                             <p>{{ $project->projectName }}</p>
