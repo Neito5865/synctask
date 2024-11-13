@@ -12,7 +12,7 @@
                 <h2>{{ $project->projectName }}</h2>
             </div>
             <div class="project-show__btn-setting">
-                <a href=""><i class="fa-solid fa-gear"></i> 設定</a>
+                <a href="{{ route('project.edit', $project->id) }}"><i class="fa-solid fa-gear"></i> 設定</a>
             </div>
             <div class="project-show__btn--create-task">
                 <a href=""><i class="fa-solid fa-plus"></i> 新規作成</a>

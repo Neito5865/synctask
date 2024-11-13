@@ -19,11 +19,17 @@ use App\Http\Controllers\ProjectsController;
 Route::group(['middleware' => 'auth'], function(){
     // トップページ
     Route::get('/', [ProjectsController::class, 'index'])->name('project.index');
-    // プロジェクト新規作成ページ
-    Route::get('/create', [ProjectsController::class, 'create'])->name('project.create');
-    // プロジェクト新規作成処理
-    Route::post('/create', [ProjectsController::class, 'store'])->name('project.store');
 
-    // プロジェクト詳細ページ
-    Route::get('/project/{id}', [ProjectsController::class, 'show'])->name('project.show');
+    Route::group(['prefix' => 'projects'], function(){
+        // プロジェクト新規作成ページ
+        Route::get('create', [ProjectsController::class, 'create'])->name('project.create');
+        // プロジェクト新規作成処理
+        Route::post('create', [ProjectsController::class, 'store'])->name('project.store');
+        // プロジェクト詳細ページ
+        Route::get('{id}', [ProjectsController::class, 'show'])->name('project.show');
+        // プロジェクト編集ページ
+        Route::get('{id}/edit', [ProjectsController::class, 'edit'])->name('project.edit');
+        // プロジェクト編集処理
+        Route::put('{id}/edit', [ProjectsController::class, 'update'])->name('project.update');
+    });
 });

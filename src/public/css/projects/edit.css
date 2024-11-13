@@ -1,0 +1,110 @@
+.alert--success {
+    width: 90%;
+    max-width: 800px;
+    height: 40px;
+    margin: 0 auto 20px auto;
+    color: #176a45;
+    background-color: #b7eed5;
+    padding: 10px;
+}
+
+.project-edit-form__error {
+    font-size: 14px;
+    color: #ff0000;
+}
+
+.project-edit__container {
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding-top: 60px;
+    padding-bottom: 100px;
+}
+
+.project-edit__heading {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 24px;
+}
+
+.project-edit__heading h1 {
+    font-size: 24px;
+    line-height: 80px;
+}
+
+.project-edit__form {
+    background-color: #fff;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: 4px 4px 4px rgba(144, 144, 144, 0.3);
+}
+
+.project-edit-form__container {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.project-edit-form__group {
+    margin-bottom: 20px;
+}
+
+.project-edit-form__group:nth-of-type(2) {
+    margin-bottom: 40px;
+}
+
+.project-edit-form__input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #B1D6F1;
+    border-radius: 6px;
+    padding-left: 10px;
+}
+
+.project-edit-form__textarea {
+    width: 100%;
+    height: 120px;
+    border: 1px solid #B1D6F1;
+    border-radius: 6px;
+    padding: 10px;
+    line-height: 1.5;
+}
+
+.project-edit-form__btn {
+    text-align: center;
+}
+
+.project-edit-form__input-submit {
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    background-color: #5799C8;
+    border-radius: 6px;
+    padding: 9px 36px;
+}
+
+.project-edit__btn {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-edit__btn--back a {
+    color: #000;
+    font-size: 14px;
+}
+.project-edit__btn--member a{
+    font-size: 14px;
+    background-color: #52BD8D;
+    color: #fff;
+    padding: 9px 24px;
+    text-decoration: none;
+    border-radius: 4px;
+}

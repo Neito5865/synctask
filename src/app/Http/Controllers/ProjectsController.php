@@ -12,7 +12,7 @@ class ProjectsController extends Controller
     public function index()
     {
         $projects = Project::orderBy('id', 'desc')->Paginate(10);
-        return view('index', ['projects' => $projects]);
+        return view('index', compact('projects'));
     }
 
     // プロジェクト新規作成ページ
@@ -40,5 +40,12 @@ class ProjectsController extends Controller
     {
         $project = Project::findOrFail($id);
         return view('projects.show', compact('project'));
+    }
+
+    // プロジェクト編集ページ
+    public function edit($id)
+    {
+        $project = Project::findOrFail($id);
+        return view('projects.edit', compact('project'));
     }
 }
