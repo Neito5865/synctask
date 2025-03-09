@@ -10,14 +10,28 @@ header{
     margin: 0 auto;
     height: 80px;
 }
+.header__heading {
+    display: flex;
+    align-items: center;
+    width: 160px;
+    height: 80px;
+}
+
 .header__heading h1{
-    font-size: 24px;
+    margin: 0;
+    padding: 0;
     line-height: 80px;
 }
-.header__heading h1 a{
-    text-decoration: none;
-    color: #3085C1;
+
+.header-logo__link {
+    display: inline-block;
 }
+
+.header-logo__img {
+    width: 100%;
+    display: block;
+}
+
 .header__f-inner{
     display: flex;
     justify-content: space-between;

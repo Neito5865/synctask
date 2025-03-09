@@ -18,7 +18,7 @@ class ProjectsController extends Controller
     // プロジェクト新規作成ページ
     public function create()
     {
-        return view('projects.create');
+        return view('project.create');
     }
 
     // プロジェクト新規作成処理
@@ -26,7 +26,7 @@ class ProjectsController extends Controller
     {
         $user_id = Auth::id();
         $projectData = $request->only([
-            'projectName',
+            'project_name',
             'description',
         ]);
         $projectData['created_by'] = $user_id;
@@ -36,16 +36,24 @@ class ProjectsController extends Controller
     }
 
     // プロジェクト詳細ページ
-    public function show($id)
+    public function show($project_id)
     {
-        $project = Project::findOrFail($id);
-        return view('projects.show', compact('project'));
+        $user = Auth::user();
+        $project = Project::findOrFail($project_id);
+
+        // 認可チェック：ログインユーザーとプロジェクトが紐づいているか
+
+        return view('project.show', compact('project'));
     }
 
     // プロジェクト編集ページ
-    public function edit($id)
+    public function edit($project_id)
     {
-        $project = Project::findOrFail($id);
-        return view('projects.edit', compact('project'));
+        $user = Auth::user();
+        $project = Project::findOrFail($project_id);
+
+        // 認可チェック：ログインユーザーとプロジェクトが紐づいているか
+
+        return view('project.edit', compact('project'));
     }
 }

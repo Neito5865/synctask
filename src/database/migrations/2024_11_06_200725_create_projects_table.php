@@ -15,10 +15,11 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->string('projectName', 150);
+            $table->string('project_name', 150);
             $table->text('description')->nullable();
             $table->foreignId('created_by')->nullable()->constrained('users')->nullOnDelete();
-            $table->timestamps();
+            $table->dateTime('created_at');
+            $table->dateTime('updated_at');
             $table->softDeletes();
         });
     }

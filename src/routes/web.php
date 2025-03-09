@@ -20,16 +20,17 @@ Route::group(['middleware' => 'auth'], function(){
     // トップページ
     Route::get('/', [ProjectsController::class, 'index'])->name('project.index');
 
-    Route::group(['prefix' => 'projects'], function(){
+    // ユーザー-プロジェクト
+    Route::prefix('project')->group(function () {
         // プロジェクト新規作成ページ
         Route::get('create', [ProjectsController::class, 'create'])->name('project.create');
         // プロジェクト新規作成処理
         Route::post('create', [ProjectsController::class, 'store'])->name('project.store');
         // プロジェクト詳細ページ
-        Route::get('{id}', [ProjectsController::class, 'show'])->name('project.show');
+        Route::get('{project_id}', [ProjectsController::class, 'show'])->name('project.show');
         // プロジェクト編集ページ
-        Route::get('{id}/edit', [ProjectsController::class, 'edit'])->name('project.edit');
+        Route::get('{project_id}/edit', [ProjectsController::class, 'edit'])->name('project.edit');
         // プロジェクト編集処理
-        Route::put('{id}/edit', [ProjectsController::class, 'update'])->name('project.update');
+        Route::put('{project_id}/edit', [ProjectsController::class, 'update'])->name('project.update');
     });
 });

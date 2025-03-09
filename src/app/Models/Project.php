@@ -12,7 +12,7 @@ class Project extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'projectName',
+        'project_name',
         'description',
         'created_by',
     ];

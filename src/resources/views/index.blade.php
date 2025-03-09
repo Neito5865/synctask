@@ -13,6 +13,6 @@
         <div class="projects__button--create">
             <a href="{{ route('project.create') }}"><i class="fa-solid fa-plus"></i> 新規作成</a>
         </div>
-        @include('projects.projects')
+        @include('project.projects')
     </div>
 @endsection

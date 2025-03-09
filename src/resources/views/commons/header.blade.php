@@ -2,7 +2,8 @@
     <div class="header__container">
         <div class="header__f-inner">
             <div class="header__heading">
-                <h1><a href="{{ route('project.index') }}">SyncTask</a></h1>
+                <h1><a class="header-logo__link" href="{{ route('project.index') }}">
+                    <img class="header-logo__img" src="{{ asset('images/header_logo.png') }}" alt="Sync Task"></a></h1>
             </div>
             <nav class="header__nav">
                 <ul class="header-nav__inner">

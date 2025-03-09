@@ -24,7 +24,7 @@ class ProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            'projectName' => 'required|max:150',
+            'project_name' => 'required|max:150',
         ];
     }
 
