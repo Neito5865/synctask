@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Project;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProjectRequest;
 
@@ -31,6 +32,8 @@ class ProjectsController extends Controller
         ]);
         $projectData['created_by'] = $user_id;
         $project = Project::create($projectData);
+
+        $project = users()->attach($user_id);
 
         return back()->with('success', '新規プロジェクトを作成しました');
     }

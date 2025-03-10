@@ -44,4 +44,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function ($user) {
+            Project::where('created_by', $user->id)->update(['created_by' => null]);
+
+            $user->projects()->detach();
+        });
+    }
+
+    public function projects() {
+        return $this->belongsToMany(Project::class, 'user_project', 'user_id', 'project_id')->withTimestamps();
+    }
 }

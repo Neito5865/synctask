@@ -16,4 +16,8 @@ class Project extends Model
         'description',
         'created_by',
     ];
+
+    public function users() {
+        return $this->belongsToMany(User::class, 'user_project', 'project_id', 'user_id')->withTimestamps();
+    }
 }

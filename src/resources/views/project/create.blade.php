@@ -1,16 +1,19 @@
 @extends('layouts.app')
+
 @section('title')
     <title>SyncTask | プロジェクト作成</title>
 @endsection
+
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/projects/create.css') }}">
 @endsection
+
 @section('content')
     <div class="project-create__container">
         <div class="project-create__heading">
             <h2>プロジェクト新規作成</h2>
         </div>
-        @include('commons.success_messages')
+        @include('commons.session_message')
         <div class="project-create__form">
             <form method="POST" action="{{ route('project.store') }}" class="project-create-form__container">
                 @csrf

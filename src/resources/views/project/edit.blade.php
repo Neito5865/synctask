@@ -1,29 +1,32 @@
 @extends('layouts.app')
+
 @section('title')
     <title>SyncTask | プロジェクト設定</title>
 @endsection
+
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/projects/edit.css') }}">
 @endsection
+
 @section('content')
     <div class="project-edit__container">
         <div class="project-edit__heading">
             <h2>プロジェクト設定</h2>
         </div>
-        @include('commons.success_messages')
+        @include('commons.session_message')
         <div class="project-edit__form">
             <form method="POST" action="" class="project-edit-form__container">
                 @csrf
                 @method('PUT')
                 <div class="project-edit-form__group">
                     <div class="project-edit-form__heading">
-                        <label class="project-edit-form__label" for="projectName">プロジェクト名</label>
+                        <label class="project-edit-form__label" for="project_name">プロジェクト名</label>
                     </div>
                     <div class="project-edit-form__item">
-                        <input class="project-edit-form__input" type="text" id="projectName" name="projectName" value="{{ old('projectName', $project->projectName) }}">
+                        <input class="project-edit-form__input" type="text" id="project_name" name="project_name" value="{{ old('project_name', $project->project_name) }}">
                     </div>
                     <div class="project-edit-form__error">
-                        @error('projectName')
+                        @error('project_name')
                             {{ $message }}
                         @enderror
                     </div>
