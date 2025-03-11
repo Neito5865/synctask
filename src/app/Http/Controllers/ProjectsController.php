@@ -12,7 +12,9 @@ class ProjectsController extends Controller
 {
     public function index()
     {
-        $projects = Project::orderBy('id', 'desc')->Paginate(10);
+        $projects = Project::with(['users' => function ($query) {
+            $query->where('user_id', Auth::id());
+        }])->orderBy('id', 'desc')->Paginate(10);
         return view('index', compact('projects'));
     }
 
@@ -33,7 +35,7 @@ class ProjectsController extends Controller
         $projectData['created_by'] = $user_id;
         $project = Project::create($projectData);
 
-        $project = users()->attach($user_id);
+        $project->users()->attach($user_id);
 
         return back()->with('success', '新規プロジェクトを作成しました');
     }

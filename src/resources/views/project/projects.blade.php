@@ -8,7 +8,9 @@
                             <p>{{ $project->project_name }}</p>
                         </div>
                         <div class="project-list__item--status">
-                            <p>参加中</p>
+                            @if ($project->users->isNotEmpty())
+                                <p>参加中</p>
+                            @endif
                         </div>
                     </div>
                 </li>
