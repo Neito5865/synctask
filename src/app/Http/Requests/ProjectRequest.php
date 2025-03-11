@@ -31,8 +31,8 @@ class ProjectRequest extends FormRequest
     public function messages()
     {
         return [
-            'projectName.required' => 'プロジェクト名を入力してください',
-            'projectName.max' => '150文字以内で入力してください',
+            'project_name.required' => 'プロジェクト名を入力してください',
+            'project_name.max' => '150文字以内で入力してください',
         ];
     }
 }

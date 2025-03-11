@@ -8,7 +8,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProjectRequest;
 
-class ProjectsController extends Controller
+class ProjectController extends Controller
 {
     public function index()
     {
@@ -28,12 +28,12 @@ class ProjectsController extends Controller
     public function store(ProjectRequest $request)
     {
         $user_id = Auth::id();
-        $projectData = $request->only([
-            'project_name',
-            'description',
+
+        $project = Project::create([
+            'project_name' => $request->project_name,
+            'description' => $request->description,
+            'created_by' => $user_id,
         ]);
-        $projectData['created_by'] = $user_id;
-        $project = Project::create($projectData);
 
         $project->users()->attach($user_id);
 
@@ -46,8 +46,6 @@ class ProjectsController extends Controller
         $user = Auth::user();
         $project = Project::findOrFail($project_id);
 
-        // 認可チェック：ログインユーザーとプロジェクトが紐づいているか
-
         return view('project.show', compact('project'));
     }
 
@@ -57,8 +55,28 @@ class ProjectsController extends Controller
         $user = Auth::user();
         $project = Project::findOrFail($project_id);
 
-        // 認可チェック：ログインユーザーとプロジェクトが紐づいているか
+        if (!$project->users->contains($user->id)) {
+            abort(403, 'このプロジェクトを編集する権限がありません');
+        }
 
         return view('project.edit', compact('project'));
+    }
+
+    // プロジェクト更新機能
+    public function update(ProjectRequest $request, $project_id)
+    {
+        $user = Auth::user();
+        $project = Project::findOrFail($project_id);
+
+        if (!$project->users->contains($user->id)) {
+            abort(403, 'このプロジェクトを編集する権限がありません');
+        }
+
+        $project->update([
+            'project_name' => $request->project_name,
+            'description' => $request->description,
+        ]);
+
+        return back()->with('success', 'プロジェクトを変更しました');
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProjectsController;
+use App\Http\Controllers\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,19 +18,16 @@ use App\Http\Controllers\ProjectsController;
 // ログイン後
 Route::group(['middleware' => 'auth'], function(){
     // トップページ
-    Route::get('/', [ProjectsController::class, 'index'])->name('project.index');
+    Route::get('/', [ProjectController::class, 'index'])->name('project.index');
 
     // ユーザー-プロジェクト
     Route::prefix('project')->group(function () {
-        // プロジェクト新規作成ページ
-        Route::get('create', [ProjectsController::class, 'create'])->name('project.create');
-        // プロジェクト新規作成処理
-        Route::post('create', [ProjectsController::class, 'store'])->name('project.store');
-        // プロジェクト詳細ページ
-        Route::get('{project_id}', [ProjectsController::class, 'show'])->name('project.show');
-        // プロジェクト編集ページ
-        Route::get('{project_id}/edit', [ProjectsController::class, 'edit'])->name('project.edit');
-        // プロジェクト編集処理
-        Route::put('{project_id}/edit', [ProjectsController::class, 'update'])->name('project.update');
+        Route::get('create', [ProjectController::class, 'create'])->name('project.create');
+        Route::post('/', [ProjectController::class, 'store'])->name('project.store');
+        Route::prefix('{project_id}')->group(function () {
+            Route::get('/', [ProjectController::class, 'show'])->name('project.show');
+            Route::get('edit', [ProjectController::class, 'edit'])->name('project.edit');
+            Route::put('/', [ProjectController::class, 'update'])->name('project.update');
+        });
     });
 });

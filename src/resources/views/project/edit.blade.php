@@ -15,7 +15,7 @@
         </div>
         @include('commons.session_message')
         <div class="project-edit__form">
-            <form method="POST" action="" class="project-edit-form__container">
+            <form method="POST" action="{{ route('project.update', $project->id) }}" class="project-edit-form__container">
                 @csrf
                 @method('PUT')
                 <div class="project-edit-form__group">
