@@ -24,6 +24,7 @@ class CreateTasksTable extends Migration
             $table->dateTime('deadline')->nullable();
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
+            $table->softDeletes();
         });
     }
 
