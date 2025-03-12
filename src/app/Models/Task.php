@@ -20,8 +20,27 @@ class Task extends Model
         'description',
     ];
 
+    protected $casts = [
+        'deadline' => 'datetime',
+    ];
+
     public function status()
     {
         return $this->belongsTo(Status::class);
+    }
+
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
+
+    public function assignee()
+    {
+        return $this->belongsTo(User::class, 'assigned_to');
     }
 }

@@ -8,6 +8,16 @@
     padding: 10px;
 }
 
+.alert--error {
+    width: 90%;
+    max-width: 800px;
+    height: 40px;
+    margin: 0 auto 20px auto;
+    color: #6a1717;
+    background-color: #eebeb7;
+    padding: 10px;
+}
+
 .project-edit-form__error {
     font-size: 14px;
     color: #ff0000;

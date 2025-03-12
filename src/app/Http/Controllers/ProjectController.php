@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Models\User;
+use App\Models\Task;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProjectRequest;
 
@@ -14,7 +15,7 @@ class ProjectController extends Controller
     {
         $projects = Project::with(['users' => function ($query) {
             $query->where('user_id', Auth::id());
-        }])->orderBy('id', 'desc')->Paginate(10);
+        }])->orderBy('created_at', 'desc')->paginate(10);
         return view('index', compact('projects'));
     }
 
@@ -44,9 +45,16 @@ class ProjectController extends Controller
     public function show($project_id)
     {
         $user = Auth::user();
-        $project = Project::findOrFail($project_id);
 
-        return view('project.show', compact('project'));
+        $project = Project::with([
+            'tasks.creator',
+            'tasks.assignee',
+            'tasks.status'
+        ])->findOrFail($project_id);
+
+        $tasks = $project->tasks()->orderBy('created_at', 'desc')->paginate(10);
+
+        return view('project.show', compact('project', 'tasks'));
     }
 
     // プロジェクト編集ページ
@@ -54,10 +62,6 @@ class ProjectController extends Controller
     {
         $user = Auth::user();
         $project = Project::findOrFail($project_id);
-
-        if (!$project->users->contains($user->id)) {
-            abort(403, 'このプロジェクトを編集する権限がありません');
-        }
 
         return view('project.edit', compact('project'));
     }
@@ -69,7 +73,7 @@ class ProjectController extends Controller
         $project = Project::findOrFail($project_id);
 
         if (!$project->users->contains($user->id)) {
-            abort(403, 'このプロジェクトを編集する権限がありません');
+            return redirect()->back()->with('error', 'このプロジェクトを編集する権限がありません');
         }
 
         $project->update([
@@ -77,6 +81,6 @@ class ProjectController extends Controller
             'description' => $request->description,
         ]);
 
-        return back()->with('success', 'プロジェクトを変更しました');
+        return redirect()->back()->with('success', 'プロジェクトを変更しました');
     }
 }

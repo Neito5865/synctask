@@ -10,51 +10,20 @@
                     <th class="tasks-table__heading">登録日</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr class="tasks-table__row" onclick="location.href='#'">
-                    <td class="tasks-table__item">テストタスク</td>
-                    <td class="tasks-table__item">テスト太郎</td>
-                    <td class="tasks-table__item">未対応</td>
-                    <td class="tasks-table__item">2024/11/10</td>
-                    <td class="tasks-table__item">2024/10/10</td>
-                </tr>
-            </tbody>
-            <tbody>
-                <tr class="tasks-table__row" onclick="location.href='#'">
-                    <td class="tasks-table__item">テストタスク</td>
-                    <td class="tasks-table__item">テスト太郎</td>
-                    <td class="tasks-table__item">未対応</td>
-                    <td class="tasks-table__item">2024/11/10</td>
-                    <td class="tasks-table__item">2024/10/10</td>
-                </tr>
-            </tbody>
-            <tbody>
-                <tr class="tasks-table__row" onclick="location.href='#'">
-                    <td class="tasks-table__item">テストタスク</td>
-                    <td class="tasks-table__item">テスト太郎</td>
-                    <td class="tasks-table__item">未対応</td>
-                    <td class="tasks-table__item">2024/11/10</td>
-                    <td class="tasks-table__item">2024/10/10</td>
-                </tr>
-            </tbody>
-            <tbody>
-                <tr class="tasks-table__row" onclick="location.href='#'">
-                    <td class="tasks-table__item">テストタスク</td>
-                    <td class="tasks-table__item">テスト太郎</td>
-                    <td class="tasks-table__item">未対応</td>
-                    <td class="tasks-table__item">2024/11/10</td>
-                    <td class="tasks-table__item">2024/10/10</td>
-                </tr>
-            </tbody>
-            <tbody>
-                <tr class="tasks-table__row" onclick="location.href='#'">
-                    <td class="tasks-table__item">テストタスク</td>
-                    <td class="tasks-table__item">テスト太郎</td>
-                    <td class="tasks-table__item">未対応</td>
-                    <td class="tasks-table__item">2024/11/10</td>
-                    <td class="tasks-table__item">2024/10/10</td>
-                </tr>
-            </tbody>
+            @foreach ($tasks as $task)
+                <tbody>
+                    <tr class="tasks-table__row" onclick="location.href='#'">
+                        <td class="tasks-table__item">{{ $task->title }}</td>
+                        <td class="tasks-table__item">{{ $task->assignee->name ?? '未設定' }}</td>
+                        <td class="tasks-table__item">{{ $task->status->name }}</td>
+                        <td class="tasks-table__item">{{ $task->deadline ? $task->deadline->format('Y/n/j') : '未設定' }}</td>
+                        <td class="tasks-table__item">{{ $task->created_at->format('Y/n/j') }}</td>
+                    </tr>
+                </tbody>
+            @endforeach
         </table>
+    </div>
+    <div class="project__paginate">
+        {{ $tasks->links() }}
     </div>
 </div>
