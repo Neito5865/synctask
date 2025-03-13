@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,7 @@ Route::group(['middleware' => 'auth'], function(){
     // トップページ
     Route::get('/', [ProjectController::class, 'index'])->name('project.index');
 
-    // ユーザー-プロジェクト
+    // プロジェクト
     Route::prefix('project')->group(function () {
         Route::get('create', [ProjectController::class, 'create'])->name('project.create');
         Route::post('/', [ProjectController::class, 'store'])->name('project.store');
@@ -28,6 +29,11 @@ Route::group(['middleware' => 'auth'], function(){
             Route::get('/', [ProjectController::class, 'show'])->name('project.show');
             Route::get('edit', [ProjectController::class, 'edit'])->name('project.edit');
             Route::put('/', [ProjectController::class, 'update'])->name('project.update');
+
+            // タスク
+            Route::prefix('task')->group(function () {
+                Route::get('create', [TaskController::class, 'create'])->name('task.create');
+            });
         });
     });
 });

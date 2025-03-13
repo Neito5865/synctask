@@ -23,7 +23,19 @@ class UserProjectSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
+                'user_id' => 5,
+                'project_id' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
                 'user_id' => 2,
+                'project_id' => 2,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'user_id' => 6,
                 'project_id' => 2,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -35,7 +47,19 @@ class UserProjectSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
+                'user_id' => 7,
+                'project_id' => 3,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
                 'user_id' => 4,
+                'project_id' => 4,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'user_id' => 8,
                 'project_id' => 4,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
