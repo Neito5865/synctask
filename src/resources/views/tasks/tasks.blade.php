@@ -23,7 +23,7 @@
             @endforeach
         </table>
     </div>
-    <div class="project__paginate">
+    <div class="task__paginate">
         {{ $tasks->links() }}
     </div>
 </div>
