@@ -38,7 +38,7 @@ class ProjectController extends Controller
 
         $project->users()->attach($user_id);
 
-        return back()->with('success', '新規プロジェクトを作成しました');
+        return redirect()->route('project.index')->with('success', '新規プロジェクトを作成しました');
     }
 
     // プロジェクト詳細ページ

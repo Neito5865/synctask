@@ -1,0 +1,139 @@
+.task-create__container {
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding-top: 60px;
+    padding-bottom: 100px;
+}
+
+.alert--success {
+    width: 90%;
+    max-width: 800px;
+    height: 40px;
+    margin: 0 auto 20px auto;
+    color: #176a45;
+    background-color: #b7eed5;
+    padding: 10px;
+}
+
+.project-create-form__error {
+    font-size: 14px;
+    color: #ff0000;
+}
+
+.task-create__heading {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 24px;
+}
+
+.task-create__heading h1 {
+    font-size: 24px;
+    line-height: 80px;
+}
+
+.task-create__form {
+    background-color: #fff;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: 4px 4px 4px rgba(144, 144, 144, 0.3);
+}
+
+.task-create-form__container {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.task-create-form__group {
+    margin-bottom: 20px;
+}
+
+.task-create-form__group:nth-of-type(3) {
+    margin-bottom: 40px;
+}
+
+.task-create-form__input--title {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #B1D6F1;
+    border-radius: 6px;
+    padding-left: 10px;
+}
+
+.task-create-form__textarea {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #B1D6F1;
+    border-radius: 6px;
+    padding: 10px;
+    line-height: 1.5;
+}
+
+.task-create-form__flex {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: calc(10px + 1vw);
+    justify-content: center;
+}
+
+.task-create-form__select--assignee, .task-create-form__select--status, .task-create-form__input--deadline {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #B1D6F1;
+    border-radius: 6px;
+    padding-left: 10px;
+}
+
+.task-create-form__select--assignee,
+.task-create-form__select--status {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.task-create-form__input--deadline {
+    padding-right: 10px;
+}
+
+.task-create-form__item {
+    position: relative;
+}
+
+.custom-arrow {
+    position: absolute;
+    top: 0;
+    right: 5%;
+    pointer-events: none;
+    font-size: 30px;
+    color: #acacac;
+    z-index: 10;
+}
+
+.task-create-form__btn {
+    text-align: center;
+}
+
+.task-create-form__input-submit {
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    background-color: #5799C8;
+    border-radius: 6px;
+    padding: 9px 36px;
+}
+
+.task-create__btn--back {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto 0 auto;
+}
+
+.task-create__btn--back a {
+    color: #000;
+    font-size: 14px;
+}

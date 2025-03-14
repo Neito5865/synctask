@@ -10,6 +10,7 @@
 
 @section('content')
     <div class="index__container">
+        @include('commons.session_message')
         <div class="index__heading">
             <h2>プロジェクト一覧</h2>
         </div>

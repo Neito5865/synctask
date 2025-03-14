@@ -10,6 +10,7 @@
 
 @section('content')
     <div class="project-show__container">
+        @include('commons.session_message')
         <div class="project-show__inner">
             <div class="project-show__heading">
                 <h2>{{ $project->project_name }}</h2>

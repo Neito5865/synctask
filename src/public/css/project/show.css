@@ -5,6 +5,27 @@
     padding-top: 60px;
     padding-bottom: 100px;
 }
+
+.alert--success {
+    width: 90%;
+    max-width: 800px;
+    height: 40px;
+    margin: 0 auto 20px auto;
+    color: #176a45;
+    background-color: #b7eed5;
+    padding: 10px;
+}
+
+.alert--error {
+    width: 90%;
+    max-width: 800px;
+    height: 40px;
+    margin: 0 auto 20px auto;
+    color: #6a1717;
+    background-color: #eebeb7;
+    padding: 10px;
+}
+
 .project-show__inner{
     width: 90%;
     max-width: 1000px;

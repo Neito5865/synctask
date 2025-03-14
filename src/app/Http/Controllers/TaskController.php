@@ -21,6 +21,6 @@ class TaskController extends Controller
 
         $participants = $project->users;
 
-        return view('task.create', compact('statuses', 'participants'));
+        return view('task.create', compact('statuses', 'project', 'participants'));
     }
 }
