@@ -24,16 +24,19 @@ Route::group(['middleware' => 'auth'], function(){
     // プロジェクト
     Route::prefix('project')->group(function () {
         Route::get('create', [ProjectController::class, 'create'])->name('project.create');
-        Route::post('/', [ProjectController::class, 'store'])->name('project.store');
+        Route::post('', [ProjectController::class, 'store'])->name('project.store');
         Route::prefix('{project_id}')->group(function () {
-            Route::get('/', [ProjectController::class, 'show'])->name('project.show');
+            Route::get('', [ProjectController::class, 'show'])->name('project.show');
             Route::get('edit', [ProjectController::class, 'edit'])->name('project.edit');
-            Route::put('/', [ProjectController::class, 'update'])->name('project.update');
+            Route::put('', [ProjectController::class, 'update'])->name('project.update');
 
             // タスク
             Route::prefix('task')->group(function () {
                 Route::get('create', [TaskController::class, 'create'])->name('task.create');
-                Route::post('/', [TaskController::class, 'store'])->name('task.store');
+                Route::post('', [TaskController::class, 'store'])->name('task.store');
+                Route::prefix('{task_id}')->group(function () {
+                    Route::get('', [TaskController::class, 'show'])->name('task.show');
+                });
             });
         });
     });

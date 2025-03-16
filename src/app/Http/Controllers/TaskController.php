@@ -48,4 +48,15 @@ class TaskController extends Controller
 
         return redirect()->route('project.show', ['project_id' => $project->id])->with('success', '新規タスクを作成しました');
     }
+
+    public function show($project_id, $task_id)
+    {
+        $task = Task::findOrFail($task_id);
+
+        if ($task->project_id !== (int) $project_id) {
+            abort(403, '不正なアクセスです');
+        }
+
+        return view('task.show', compact('task'));
+    }
 }
