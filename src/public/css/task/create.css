@@ -16,7 +16,7 @@
     padding: 10px;
 }
 
-.project-create-form__error {
+.task-create-form__error {
     font-size: 14px;
     color: #ff0000;
 }

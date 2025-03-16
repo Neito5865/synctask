@@ -85,7 +85,7 @@
                         </div>
                         <div class="task-create-form__pull-down">
                             <div class="task-create-form__heading">
-                                <label class="task-create-form__label" for="deadline">状態</label>
+                                <label class="task-create-form__label" for="deadline">期限日</label>
                             </div>
                             <div class="task-create-form__item">
                                 <input class="task-create-form__input--deadline" type="date" name="deadline" id="deadline" value="{{ old('deadline', \Carbon\Carbon::now()->format('Y/n/j')) }}">

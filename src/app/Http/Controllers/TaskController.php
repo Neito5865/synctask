@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Project;
 use App\Models\Status;
 use App\Models\Task;
+use App\Http\Requests\TaskRequest;
+
 
 class TaskController extends Controller
 {
@@ -25,7 +27,7 @@ class TaskController extends Controller
         return view('task.create', compact('statuses', 'project', 'participants'));
     }
 
-    public function store(Request $request, $project_id)
+    public function store(TaskRequest $request, $project_id)
     {
         $user = Auth::user();
         $project = Project::findOrFail($project_id);
