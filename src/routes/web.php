@@ -33,6 +33,7 @@ Route::group(['middleware' => 'auth'], function(){
             // タスク
             Route::prefix('task')->group(function () {
                 Route::get('create', [TaskController::class, 'create'])->name('task.create');
+                Route::post('/', [TaskController::class, 'store'])->name('task.store');
             });
         });
     });

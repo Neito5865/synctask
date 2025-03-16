@@ -15,7 +15,7 @@
             <h2>タスク新規作成</h2>
         </div>
         <div class="task-create__form">
-            <form method="POST" action="" class="task-create-form__container">
+            <form method="POST" action="{{ route('task.store', ['project_id' => $project->id]) }}" class="task-create-form__container">
                 @csrf
                 <div class="task-create-form__group">
                     <div class="task-create-form__heading">

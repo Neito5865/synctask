@@ -8,7 +8,7 @@
 
 .alert--success {
     width: 90%;
-    max-width: 800px;
+    max-width: 1000px;
     height: 40px;
     margin: 0 auto 20px auto;
     color: #176a45;
@@ -18,7 +18,7 @@
 
 .alert--error {
     width: 90%;
-    max-width: 800px;
+    max-width: 1000px;
     height: 40px;
     margin: 0 auto 20px auto;
     color: #6a1717;
