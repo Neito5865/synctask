@@ -52,11 +52,12 @@ class TaskController extends Controller
     public function show($project_id, $task_id)
     {
         $task = Task::findOrFail($task_id);
+        $statuses = Status::all();
 
         if ($task->project_id !== (int) $project_id) {
             abort(403, '不正なアクセスです');
         }
 
-        return view('task.show', compact('task'));
+        return view('task.show', compact('task', 'statuses'));
     }
 }
